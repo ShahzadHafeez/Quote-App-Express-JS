@@ -1,0 +1,57 @@
+<!-- views/pages/signup.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+    <script src="../public/signup_validation.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+</head>
+
+<body class="container" style="max-width:50%;">
+    <main style="padding-top:50px;">
+        <div class="jumbotron">
+            <h1>Signup</h1>
+            <div class="alert" id="form_signup_alert" role="alert" style="display:none"></div>
+            <br />
+            <div id="spinner" style="display:none;">
+                <img id="img_spinner" src="../public/spinner.gif" alt="Loading..." />
+            </div>
+            <form action="/user/register" id="signupForm" method="post">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" placeholder="Enter First Name" name="firstName"
+                        id="firstName">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Enter Last Name" id="lastName" name="lastName">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" placeholder="Enter email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" placeholder="Enter password" id="password"
+                        name="password">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPwd">Confirm Password</label>
+                    <input type="password" class="form-control" placeholder="Enter password Again" id="confirmPwd"
+                        name="confirmPwd">
+                </div>
+                <button type="submit" class="btn btn-primary" id="btn_signup" style="margin-right:20px">Signup</button>
+                Already have an account? <a href="/user/login">Login</a>
+            </form>
+
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>

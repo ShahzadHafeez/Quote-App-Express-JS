@@ -1,0 +1,83 @@
+<!-- views/pages/view.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>Details</h1>
+            <p>Complete details</p>
+
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>First Name</th>
+                        <td><%= quote.firstName%></td>
+                    </tr>
+                    <tr>
+                        <th>Last Name</th>
+                        <td><%= quote.lastName%></td>
+                    </tr>
+                    <tr>
+                        <th>Organization Name</th>
+                        <td><%= quote.organizationName%></td>
+                    </tr>
+                    <tr>
+                        <th>Email Address</th>
+                        <td><%= quote.email%></td>
+                    </tr>
+                    <tr>
+                        <th>Phone Number</th>
+                        <td><%= quote.phone%></td>
+                    </tr>
+                    <tr>
+                        <th>Services List</th>
+                        <td><%= quote.services%></td>
+                    </tr>
+                    <tr>
+                        <th>Size of Lown</th>
+                        <td><%= quote.sizeOfLown%></td>
+                    </tr>
+                    <tr>
+                        <th>Additional Request (optional)</th>
+                        <td><%= quote.additionalRequest%></td>
+                    </tr>
+                    <tr>
+                        <th>Date From</th>
+                        <td><%= quote.dateFrom%></td>
+                    </tr>
+                    <tr>
+                        <th>Date To</th>
+                        <td><%= quote.dateTo%></td>
+                    </tr>
+                    <tr>
+                        <th>Created At</th>
+                        <td><%= quote.createdAt%></td>
+                    </tr>
+                    <tr>
+                        <th>Actions</th>
+                        <td>
+                            <a href="/quote/index" class="btn btn-primary">Cancel</a>
+                            <a href="#" class="btn btn-success">Mark Done</a>
+                            <a href="/quote/remove?id=<%= quote._id %>" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>

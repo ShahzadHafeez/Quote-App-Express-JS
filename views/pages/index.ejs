@@ -1,0 +1,65 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head'); %>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css" />
+  <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+</head>
+
+<body class="container">
+  <header>
+    <%- include('../partials/header'); %>
+  </header>
+
+  <main>
+    <div class="jumbotron">
+      <table id="table_id" class="table">
+        <thead>
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Organization Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Lown Size</th>
+            <th scope="col">Created Date</th>
+            <th scope="col">Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% var Num = 1; %>
+          <% quotes.forEach(function(quote) { %>
+          <tr scope="row">
+            <td><%= Num %></td>
+            <td><%= quote.firstName %></td>
+            <td><%= quote.lastName %></td>
+            <td><%= quote.organizationName %></td>
+            <td><%= quote.email %></td>
+            <td><%= quote.phone %></td>
+            <td><%= quote.sizeOfLown %></td>
+            <td><%= quote.createdAt.toISOString().split('T')[0] %></td>
+            <td><a href="/quote/view?id=<%= quote._id %>" title="Details of Quest">View</a></td>
+          </tr>
+          <% Num += 1; %>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <%- include('../partials/footer'); %>
+  </footer>
+  <script>
+    $(document).ready(function () {
+      $("#table_id").DataTable();
+    });
+  </script>
+</body>
+
+</html>

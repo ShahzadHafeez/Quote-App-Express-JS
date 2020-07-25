@@ -1,0 +1,42 @@
+<!-- views/pages/login.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+    <script src="../public/login_validation.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+</head>
+
+<body class="container" style="max-width:50%;">
+    <main style="padding-top:20%;">
+        <div class="jumbotron">
+            <h1>Login</h1>
+            <div class="alert" id="form_login_alert" role="alert" style="display:none"></div>
+            <br />
+            <div id="spinner" style="display:none;">
+                <img id="img_spinner" src="../public/spinner.gif" alt="Loading..." />
+            </div>
+            <form action="/user/login" method="post" id="form_login">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" placeholder="Enter email" id="email" name="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" placeholder="Enter password" id="password"
+                        name="password">
+                </div>
+                <button type="submit" class="btn btn-primary" id="btn_login" style="margin-right:20px">Login</button>
+                Want to create account? <a href="/user/signup">Signup</a>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+
+</html>
