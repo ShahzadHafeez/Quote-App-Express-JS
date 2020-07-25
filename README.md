@@ -5,7 +5,7 @@ This is a complete stand alone quote app that receives quote requests from shopi
 In order to develop this app, I have used Express JS framework, mongoDB remote client and MVC model.
 
 ## complete list of libraries used in the app:
-- @hapi/joi: for form data server validation \n
+- @hapi/joi: for form data server validation
 - bcryptjs: to encrypt users password before to save in database
 - cors: to accept the request from Shopify store
 - dotenv: to save tokens and secret keys etc.
